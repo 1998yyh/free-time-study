@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 250px;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 100px;
+      font-size: 30px;
+      background: linear-gradient(0, #108b96 2px, #108b96 2px) no-repeat,
+        linear-gradient(-90deg, #108b96 2px, #108b96 2px) no-repeat,
+        linear-gradient(-180deg, #108b96 2px, #108b96 2px) no-repeat,
+        linear-gradient(-270deg, #108b96 2px, #108b96 2px) no-repeat;
+      background-size: 0 2px, 2px 0, 0 2px, 2px 0;
+      background-position: left top, right top, right bottom, left bottom;
+      transition: ease .5s;
+    }
+
+    .box:hover {
+      background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    the content
+  </div>
+</body>
+
+</html>
