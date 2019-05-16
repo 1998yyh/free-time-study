@@ -1,0 +1,69 @@
+<!-- 
+  这尼玛我学不会啊
+  能写出来这个的都是什么1怪物啊
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>抖音LOGO</title>
+  <style contenteditable="true">
+    .logo {
+      position: relative;
+      width: 37px;
+      height: 218px;
+      margin: 100px auto;
+      z-index: 1;
+      background: #fff;
+      filter:drop-shadow(-10px -10px 0 #24f6f0) contrast(150%) brightness(110%);
+      box-shadow: 11.6px 10px 0 0 #fe2d52;
+      z-index: 10;
+      top: -60px;
+    }
+    /**
+    一个元素本身 box-shadow 可以创建一个背景
+                filter:drop shadow 可以创建一个
+                background:背景叠加可以创建多个
+                border:又可以创建出四个
+    这个元素的两个伪类又可以创建出N个 组成不同的图案，
+    但是 我学不会 我真是佛了；
+    
+    */
+    .logo::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 37px solid #fff;
+      border-top: 37px solid transparent;
+      border-radius: 50%;
+      top: 123px;
+      left: -137px;
+      transform: rotate(45deg);
+      filter: drop-shadow(16px 0px 0 #fe2d52);
+    }
+    
+    .logo::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border: 30px solid #fff;
+      border-right: 30px solid transparent;
+      border-top: 30px solid transparent;
+      border-left: 30px solid transparent;
+      top: -100px;
+      right: -172px;
+      border-radius: 100%;
+      transform: rotate(45deg);
+      z-index: -10;
+      filter:drop-shadow(14px 0 0 #fe2d52);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo"></div>
+</body>
+</html>
