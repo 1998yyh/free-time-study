@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./test.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <hgroup class="text-magic" data-word="CSSTextMagic">
+    CSSTextMagic
+    <div class="white"></div>
+  </hgroup>
+  <style>
+    .text-magic{
+      position: absolute;
+      top: 50%;left: 50%;
+      transform: translate(-50%,-50%);
+      width: 300px;
+      font-size: 36px;
+      font-family: RaleWay, Verdana, Arial;
+    }
+
+    .white{
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      z-index: 4;
+      animation: whiteMove 3s ease-out infinite;
+    }
+
+    .text-magic::before{
+      content: attr(data-word);
+      position: absolute;
+      top: 0;
+      left: 0.5px;
+      height: 0;
+      color:rgba(0,0,0,.9);
+      overflow: hidden;
+      z-index: 2;
+      animation: redShadow 1s ease-in infinite;
+      filter: contrast(200%);
+      text-shadow: 0.1px 0 0 red;
+    }
+    
+    .text-magic::after{
+      content:attr(data-word);
+      position:absolute;
+      top:0;
+      left:-3px;
+      height:36px;
+      color:rgba(0,0,0,.8);
+      overflow:hidden;
+      z-index:3;
+      background:rgba(255,255,255,.9);
+      animation:redHeight 1.5s ease-out infinite;
+      filter:contrast(200%);
+    }
+
+    @keyframes whiteMove{
+      8%{
+        top:38px;
+      }
+      10%{
+        top:8px;
+      }
+      12%{
+        top:42px;
+      }
+      99%{
+        top:36px;
+      }
+    }
+
+    @keyframes redHeight{
+      20%{
+        height:42px;
+      }
+      35%{
+        height:12px;
+      }
+      50%{
+        height:40px;
+      }
+      60%{
+        height:20px;
+      }
+      70%{
+        height:34px;
+      }
+      80%{
+        height:22px;
+      }
+      100%{
+        height:0px;
+      }
+    }
+
+    @keyframes redShadow{
+      20%{
+        height:32px;
+      }
+      60%{
+        height:6px;
+      }
+      100%{
+        height:42px;
+      }
+    }
+  </style>
+</body>
+</html>
