@@ -1,0 +1,314 @@
+<!-- 
+  还没研究 但是 很酷 很帅 很吊 我是服的
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .g-container {
+      position: relative;
+      margin: 20vh auto;
+      width: 33vw;
+      height: 10vw;
+      -webkit-filter: blur(0.2vw) contrast(20);
+              filter: blur(0.2vw) contrast(20);
+    }
+
+    .g-view {
+      top: 0;
+      left: 0;
+      position: absolute;
+      overflow: hidden;
+      font-size: 6vw;
+      height: 10vw;
+      background: #000;
+      mix-blend-mode: screen;
+    }
+
+    .g-text {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 33vw;
+      color: #fff;
+    }
+
+    .g-view:nth-child(0) {
+      width: 0vw;
+      -webkit-animation: rotate 2s ease-in-out 0ms forwards;
+              animation: rotate 2s ease-in-out 0ms forwards;
+      z-index: 10;
+    }
+    .g-view:nth-child(0)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: -3vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(1) {
+      width: 3vw;
+      -webkit-animation: rotate 2s ease-in-out 80ms forwards;
+              animation: rotate 2s ease-in-out 80ms forwards;
+      z-index: 9;
+    }
+    .g-view:nth-child(1)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(2) {
+      width: 6vw;
+      -webkit-animation: rotate 2s ease-in-out 160ms forwards;
+              animation: rotate 2s ease-in-out 160ms forwards;
+      z-index: 8;
+    }
+    .g-view:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(3) {
+      width: 9vw;
+      -webkit-animation: rotate 2s ease-in-out 240ms forwards;
+              animation: rotate 2s ease-in-out 240ms forwards;
+      z-index: 7;
+    }
+    .g-view:nth-child(3)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(4) {
+      width: 12vw;
+      -webkit-animation: rotate 2s ease-in-out 320ms forwards;
+              animation: rotate 2s ease-in-out 320ms forwards;
+      z-index: 6;
+    }
+    .g-view:nth-child(4)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 9vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(5) {
+      width: 15vw;
+      -webkit-animation: rotate 2s ease-in-out 400ms forwards;
+              animation: rotate 2s ease-in-out 400ms forwards;
+      z-index: 5;
+    }
+    .g-view:nth-child(5)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 12vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(6) {
+      width: 18vw;
+      -webkit-animation: rotate 2s ease-in-out 480ms forwards;
+              animation: rotate 2s ease-in-out 480ms forwards;
+      z-index: 4;
+    }
+    .g-view:nth-child(6)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(7) {
+      width: 21vw;
+      -webkit-animation: rotate 2s ease-in-out 560ms forwards;
+              animation: rotate 2s ease-in-out 560ms forwards;
+      z-index: 3;
+    }
+    .g-view:nth-child(7)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(8) {
+      width: 24vw;
+      -webkit-animation: rotate 2s ease-in-out 640ms forwards;
+              animation: rotate 2s ease-in-out 640ms forwards;
+      z-index: 2;
+    }
+    .g-view:nth-child(8)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(9) {
+      width: 27vw;
+      -webkit-animation: rotate 2s ease-in-out 720ms forwards;
+              animation: rotate 2s ease-in-out 720ms forwards;
+      z-index: 1;
+    }
+    .g-view:nth-child(9)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    .g-view:nth-child(10) {
+      width: 30vw;
+      -webkit-animation: rotate 2s ease-in-out 800ms forwards;
+              animation: rotate 2s ease-in-out 800ms forwards;
+      z-index: 0;
+    }
+    .g-view:nth-child(10)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 27vw;
+      height: 10vw;
+      background: #000;
+      z-index: 1;
+    }
+
+    @-webkit-keyframes rotate {
+      0% {
+        -webkit-transform: translate(0) rotate(0deg) scaleX(1) skewX(0) skewY(0);
+                transform: translate(0) rotate(0deg) scaleX(1) skewX(0) skewY(0);
+      }
+      50% {
+        -webkit-transform: translate(40vw, 20vh) rotate(-180deg) scaleX(1.5) skewX(40deg) skewY(-20deg);
+                transform: translate(40vw, 20vh) rotate(-180deg) scaleX(1.5) skewX(40deg) skewY(-20deg);
+      }
+      100% {
+        -webkit-transform: translate(0vw) rotate(-360deg) scaleX(1) skewX(0) skewY(0);
+                transform: translate(0vw) rotate(-360deg) scaleX(1) skewX(0) skewY(0);
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        -webkit-transform: translate(0) rotate(0deg) scaleX(1) skewX(0) skewY(0);
+                transform: translate(0) rotate(0deg) scaleX(1) skewX(0) skewY(0);
+      }
+      50% {
+        -webkit-transform: translate(40vw, 20vh) rotate(-180deg) scaleX(1.5) skewX(40deg) skewY(-20deg);
+                transform: translate(40vw, 20vh) rotate(-180deg) scaleX(1.5) skewX(40deg) skewY(-20deg);
+      }
+      100% {
+        -webkit-transform: translate(0vw) rotate(-360deg) scaleX(1) skewX(0) skewY(0);
+                transform: translate(0vw) rotate(-360deg) scaleX(1) skewX(0) skewY(0);
+      }
+    }
+    @-webkit-keyframes move {
+      100% {
+        -webkit-transform: translate(0, 4vw);
+                transform: translate(0, 4vw);
+      }
+    }
+    @keyframes move {
+      100% {
+        -webkit-transform: translate(0, 4vw);
+                transform: translate(0, 4vw);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="g-container">
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+    <div class="g-view"> 
+      <div class="g-text">MAGICSS </div>
+    </div>
+  </div>
+</body>
+</html>

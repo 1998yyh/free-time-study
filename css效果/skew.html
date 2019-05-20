@@ -1,0 +1,45 @@
+  <!-- 可能这是我第一次感受到了skew的用法 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      margin: 0;
+      background: #bbb;
+      border: 1px solid #fff;
+      transform: rotate(30deg);
+    }
+    div::before{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      transform-origin: 0 50%;
+      transform: translate(100%, 0) skewY(45deg) scaleX(.6);
+      background: #ddd;
+    }
+    div::after{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      transform-origin: 0 0;
+      transform: translate(0%, 100%) skewX(45deg) scaleY(.6);
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
