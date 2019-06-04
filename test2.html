@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = "2323344f44f4440f90ffb0e0e00f4759-1"
+    var arr2 = []
+    a.split(';').forEach(function(v){
+        arr2.push(v.split('-')[1])
+      })
+    console.log(Math.max(...arr2)) 
+    </script>
+</body>
+</html>
