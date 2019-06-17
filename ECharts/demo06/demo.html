@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #main {
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main"></div>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
+  <script>
+    var myChart = echarts.init(document.querySelector("#main"));
+    var option = {
+      dataset: {
+        source: [
+          ['score', 'amount', 'product'],
+          [11, 72, 'M'],
+          [112, 62, 'A'],
+          [1113, 52, 'S'],
+          [1114, 42, 'D'],
+          [15, 32, 'F'],
+          [16, 22, 'G'],
+          [17, 12, 'H'],
+        ]
+      },
+      xAxis: {
+        type: 'category'
+      },
+      yAxis: {},
+      series: [{
+        type: 'bar',
+        encode: {
+
+          x: 'product',
+          y: 'score',
+        }
+      }]
+    }
+    
+
+
+    var data1 = [];
+    var data2 = [];
+    var data3 = [];
+
+    var random = function (max) {
+      return (Math.random() * max).toFixed(3);
+    };
+
+    for (var i = 0; i < 500; i++) {
+      data1.push([random(10), random(3), random(1)]);
+      data2.push([random(8), random(5), random(1)]);
+      data3.push([random(10), random(4), random(1)]);
+    }
+
+    var option2 = {
+      animation: false,
+      legend: {
+        data: ['scatter', 'scatter2', 'scatter3']
+      },
+      tooltip: {},
+      xAxis: {
+        type: 'value',
+        min: 'dataMin',
+        max: 'dataMax',
+        splitLine: {
+          show: true
+        }
+      },
+      yAxis: {
+        type: 'value',
+        min: 'dataMin',
+        max: 'dataMax',
+        splitLine: {
+          show: true
+        }
+      },
+      dataZoom: [{
+          type: 'slider',
+          show: true,
+          xAxisIndex: [0],
+          start: 1,
+          end: 35
+        },
+        {
+          type: 'slider',
+          show: true,
+          yAxisIndex: [0],
+          left: '93%',
+          start: 29,
+          end: 36
+        },
+        {
+          type: 'inside',
+          xAxisIndex: [0],
+          start: 1,
+          end: 35
+        },
+        {
+          type: 'inside',
+          yAxisIndex: [0],
+          start: 29,
+          end: 36
+        }
+      ],
+      series: [{
+          name: 'scatter',
+          type: 'scatter',
+          itemStyle: {
+            normal: {
+              opacity: 0.8
+            }
+          },
+          symbolSize: function (val) {
+            return val[2] * 10;
+          },
+          data: data1
+        },
+        {
+          name: 'scatter2',
+          type: 'scatter',
+          itemStyle: {
+            normal: {
+              opacity: 0.8
+            }
+          },
+          symbolSize: function (val) {
+            return val[2] * 10;
+          },
+          data: data2
+        },
+        {
+          name: 'scatter3',
+          type: 'scatter',
+          itemStyle: {
+            normal: {
+              opacity: 0.8,
+            }
+          },
+          symbolSize: function (val) {
+            return val[2] * 20;
+          },
+          data: data3
+        }
+      ]
+    }
+
+    myChart.setOption(option2)
+  </script>
+</body>
+
+</html>

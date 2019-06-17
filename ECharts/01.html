@@ -8,6 +8,10 @@
   <title>Document</title>
   <style>
     #main {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       width: 600px;
       height: 400px;
     }
@@ -19,18 +23,109 @@
   <div id="main"></div>
   <script src="./node_modules/echarts/dist/echarts.js"></script>
   <script>
+    var name = 'woe'
     const myChart = echarts.init(document.querySelector('#main'))
     console.log(myChart)
     var option = {
       title: {
-        text: 'ECharts 入门示例'
+        id: '...',
+        show: true, //是否显示
+        text: 'ECharts 入门示例',
+        textAlign: '', //位置相对于哪里不确定！
+        textVerticalAlign: 'middle',
+        triggerEvent: false, //是否触发事件 什么意思？？
+        subtext: 'www.baidu.com', //副标题
+        sublink: 'https://www.baidu.com', //副标题连接 点击跳转
+        subtarget: 'self',
+        padding: 5,
+        zlevel: 0, // canvas分层 zlevel值大的会放在zlevel值小的上面 
+        z: 2, //控制图形的先后顺序
+        borderWidth: '1',
+        /**
+         *  top:
+         *  right:
+         *  left:
+         *  bottom:
+         *  background:
+         *  backgroundcolor:
+         * 
+         */
+        subtextStyle: {
+          color: 'red',
+          fontStyle: 'italic',
+          fontWeight: 'bold',
+        }
       },
       tooltip: {},
+
+      // legend =》 图例组建 就是上面的色块     
       legend: {
-        data: ['销量']
+        type: 'scroll',
+        data: ['销量'],
+        orient: 'horizontal', //图标的排列方向
+        itemGap: 10, //图例的之间间隔
+        itemWidth: 25, //图标的长度 
+        itemHeight: 14, //图标的宽度
+        symbolKeepAspect: true, //如果图标是path://的形式，是否在缩放是保持图形的长宽比
+        formatter: 'Legend{name}',
+        selectedMode: true, //true false single multiple
+        inactiveColor: '#ccc', // 图例关闭时的颜色
+        selected: {
+          '系列1': true,
+          '系列2': false
+        },
+        textStyle: {
+          color: 'blue',
+          fontStyle: 'normal',
+          fontWeight: 'normal',
+          fontFamily: 'sans-serif',
+          backgroundcolor: '',
+          /**
+           * 可以使用图片,例如
+           * background :{
+           * image:'xx/xxx.png'
+           * }
+           */
+          borderColor: '',
+          borderWidth: '',
+
+          //padding shadowColor shadowBlur
+        }
       },
+
+      //  直角坐标系内绘制网格，单个grid内最多可以放置上下两个X轴，左右两个Y轴。可以在网格上绘制折线图
+      //  柱状图 散点图  
+      grid: [{
+        zlevel: 0, //default:0
+
+      }, {
+        zlevel: 1
+      }],
+
+      // 直角坐标系grid中的x轴，一般情况下单个grid组件，多于两个x轴需要通过配置offset
       xAxis: {
-        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+        gridIndex: 0,
+        inverse: true,
+        type: 'category', //  value 数值轴,category项目周，time 时间轴，log 对数轴
+        name: '横坐标',
+        nameLocation: 'start',
+        nameTextStyle: {
+
+        },
+        nameGap: 15, //坐标轴名称与轴线之间的距离
+        nameRotate:-45,
+        boundaryGap: ['20%', '20%'],
+        min:function(value){
+          return value.min
+        },
+        max:function(value){
+          return value.max
+        },
+        scale:false, // 数值轴可用 坐标轴不可包括零刻度
+        minInterval:1,  //最小间隔 数值轴与时间轴有效果
+        maxInterval:2, //最大间隔
+        
       },
       yAxis: {},
       series: [{

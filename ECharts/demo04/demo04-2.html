@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #main {
+      width: 500px;
+      height: 400px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main"></div>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    var myChart = echarts.init(document.getElementById('main'));
+    myChart.showLoading();
+    $.get('data.json').done(function (data) {
+      myChart.hideLoading();
+      myChart.setOption({
+        title: {
+          text: '异步数据加载示例'
+        },
+        tooltip: {},
+        legend: {
+          data: ['销量']
+        },
+        xAxis: {
+          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        },
+        yAxis: {},
+        series: [{
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }]
+      });
+    });
+  </script>
+</body>
+
+</html>

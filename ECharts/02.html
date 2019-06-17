@@ -8,7 +8,56 @@
 </head>
 <body>
   <script>
-    var echarts = require()
-  </script>
+    console.log(formatSize(1024*20))
+          function formatSize(num) {
+        var uploadSizeStr = '';
+        if (num >= 1024 * 1024) {
+          num = reserveDecimal(num / (1024 * 1024), 1) + '';
+          if (num.split('.')[1] == 0) {
+            num = num.split('.')[0];
+          }
+          uploadSizeStr = num + 'M';
+        } else if (num >= 1024) {
+          num = reserveDecimal(num / 1024, 1) + '';
+          if (num.split('.')[1] == 0) {
+            num = num.split('.')[0];
+          }
+          uploadSizeStr = num + 'K';
+        } else if (num > 0 && num < 1024) {
+          num = reserveDecimal(num, 1) + '';
+          if (num.split('.')[1] == 0) {
+            num = num.split('.')[0];
+          }
+          uploadSizeStr = num + 'B';
+        } else {
+          uploadSizeStr = '0';
+        }
+        return uploadSizeStr;
+      }
+
+      function reserveDecimal(num, n = 0) {
+        var numbers = '';
+        for (let i = 0; i < n; i++) {
+          numbers += '0';
+        }
+        let s = 1 + numbers;
+        // 如果是整数需要添加后面的0
+        let spot = n > 0 ? "." + numbers : '';
+        // Math.round四舍五入  
+        //  parseFloat() 函数可解析一个字符串，并返回一个浮点数。
+        var value = Math.round(parseFloat(num) * s) / s;
+        // 从小数点后面进行分割
+        var d = value.toString().split(".");
+        if (d[1]) {
+          // 保留n位小数后面添加(n-d)个0
+          for (let i = d[1].length; i < n; i++) {
+            value = value.toString() + '0';
+          }
+        } else {
+          value = value.toString() + spot;
+        }
+        return value;
+      }
+    </script>
 </body>
 </html>
