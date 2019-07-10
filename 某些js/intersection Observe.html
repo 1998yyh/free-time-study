@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body{
+      height: 2000px;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background: blue;
+      position: absolute;
+      top: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="scrollArea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, iste. Omnis, at eaque? Beatae ipsam tempora et accusamus debitis, veritatis dolores alias voluptates ullam odio, aperiam delectus illo facere maxime?</div>
+
+  <script>
+    var options = {
+      root: document.querySelector('#scrollArea'),
+      rootMargin: '0px',
+      threshold: 1.0,
+    }
+    var observer = new IntersectionObserver(alert(1), options);
+  </script>
+</body>
+
+</html>
