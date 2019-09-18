@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+<body>
+    <!-- wave 利用背景图实现波浪水纹效果 -->
+    <section id="wave" class="code-wrap cf">
+        <div class="css-live-wrap">
+          <hgroup class="wave">
+          </hgroup>
+        </div>
+        <style class="code" contenteditable=true>
+          .wave{
+            position: absolute;
+            top: 60%;left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;height: 200px;
+            background-image:url('../logo.jpg');
+            background-position:center center;
+            overflow:hidden;
+          }
+          .wave::before,.wave::after{
+            content:"";
+            position:absolute;
+            background-image:url('../logo.jpg');
+            background-position:center center;
+            border-radius:50%;
+          }
+          .wave::before{
+            z-index:2;
+            animation:wave 2s ease-out infinite;
+            -webkit-animation:wave 2s ease-out infinite;
+          }
+          .wave::after{
+            z-index:3;
+            animation:wave 2s ease-out .2s infinite;
+            -webkit-animation:wave 2s ease-out .2s infinite;
+          }
+          @keyframes wave{
+            0%{
+              top: 50%;left: 50%;
+              transform: translate(-50%, -50%) scale(1.4);
+              width:30px;
+              height:30px;
+            }
+            50%{
+              top: 50%;left: 50%;
+              transform: translate(-50%, -50%) scale(1);
+              width:240px;
+              height:240px;
+            }
+            100%{
+              top: 50%;left: 50%;
+              transform: translate(-50%, -50%) scale(1);
+              width:240px;
+              height:240px;
+            }
+          }
+          @-webkit-keyframes wave{
+            0%{
+              top: 50%;left: 50%;
+              -webkit-transform: translate(-50%, -50%) scale(1.4);
+              width:30px;
+              height:30px;
+            }
+            50%{
+              top: 50%;left: 50%;
+              -webkit-transform: translate(-50%, -50%) scale(1);
+              width:240px;
+              height:240px;
+            }
+            100%{
+              top: 50%;left: 50%;
+              -webkit-transform: translate(-50%, -50%) scale(1);
+              width:240px;
+              height:240px;
+            }
+          }
+        </style>
+      </section>
+</body>
+</html>

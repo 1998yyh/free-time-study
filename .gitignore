@@ -1,6 +1,9 @@
 .DS_Store
 node_modules/
 /dist/
+/vue-shop/
+/vue-typescript-dpapp-demo/
+/vuepress/
 .cache/
 npm-debug.log*
 yarn-debug.log*

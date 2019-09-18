@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .record {
+            position: relative;
+            margin: 0 auto;
+            width: 260px; height: 260px;
+            border-radius: 50%;
+            background:
+                linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
+                linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
+                repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+            background-size: 50% 100%, 100% 50%, 100% 100%;
+            box-shadow: 5px 10px 20px #ccc;
+        }
+        .record:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -35px;
+            border: solid 1px #d9a388;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #da5b33,
+                inset 0 0 0 27px #da5b33;
+            background: #fff;
+            content: '';
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 唱片 ==> 径向渐变 -->
+    <div class="record"></div>
+</body>
+</html>

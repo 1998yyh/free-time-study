@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div oncontextmenu="return false">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium ducimus nam in, quos libero dicta voluptates sequi minima aliquam, dolore assumenda cumque veniam excepturi quaerat, voluptatibus fuga. Nihil, cum?</div>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium ducimus nam in, quos libero dicta voluptates sequi minima aliquam, dolore assumenda cumque veniam excepturi quaerat, voluptatibus fuga. Nihil, cum?</div>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium ducimus nam in, quos libero dicta voluptates sequi minima aliquam, dolore assumenda cumque veniam excepturi quaerat, voluptatibus fuga. Nihil, cum?</div>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium ducimus nam in, quos libero dicta voluptates sequi minima aliquam, dolore assumenda cumque veniam excepturi quaerat, voluptatibus fuga. Nihil, cum?</div>
+    <script>
+        window.onload = function(){
+            /** 
+             * oncontextmenu 禁止右键
+             * oncopy 禁止复制 可以点击复制但是复制不成功
+             * onselectstart 禁止选中
+            */
+
+            /**
+             * topmargin="0"
+                oncontextmenu="return false" 
+                ondragstart="return false" 
+                onselectstart="return false" 
+                onselect="document.selection.empty()"
+                oncopy="document.selection.empty()" 
+                onbeforecopy="return false"
+                onmouseup="document.selection.empty()"
+
+                //1．禁止网页另存为：在<body>后面加入以下代码：
+                <noscript>
+                <iframe src="*.htm"></iframe>
+                </noscript>
+
+
+                //2．禁止网页内容复制．粘贴：在<body>中加入以下代码：
+                <body
+                onmousemove=/HideMenu()/ oncontextmenu="return false"
+                ondragstart="return false" onselectstart ="return false"
+                onselect="document.selection.empty()"
+                oncopy="document.selection.empty()" onbeforecopy="return false"
+                onmouseup="document.selection.empty()">
+             * 
+             * */ 
+            var oDiv = document.querySelectorAll("div")[2]
+            oDiv.oncontextmenu = function(e){
+                if(e.ctrlKey){
+                    return true
+                }else{
+                    return false
+                }
+                
+            }
+            oDiv.oncopy = function(){
+                return false
+            }
+            oDiv.onselectstart = function(){
+                return false
+            }
+
+
+            function uFunction(){
+                document.all.infoDiv.innerHTML
+            }
+        }
+    </script>
+</body>
+</html>

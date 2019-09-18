@@ -138,4 +138,17 @@ a.insertAdjacentElement('beforebegin',c) //如此操作元素
  * 
  */
 
+/**
+ * createDocumentFragment 创建虚拟DOM？？ 
+ * 避免reflow
+ */
+const parentNode = document.getElementById('content')
+const lists = ['a', 'b', 'c', 'd']
+const fragment = document.createDocumentFragment()
+lists.forEach(text => {
+  const li = document.createElement('li')
+  li.textContent = text
+  fragment.appendChild(li)
+})
+parentNode.appendChild(fragment)
 

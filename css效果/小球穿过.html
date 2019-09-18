@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+            filter: blur(5px) contrast(10);
+            overflow: hidden;
+        }
+
+        .ball {
+            position: absolute;
+            left: 0; 
+            top: 40vh;
+            height: 2vh;
+            width: 2vh;
+            border-radius: 50%;
+            background: #fff;
+            animation: move 10s infinite;
+            
+        }
+
+        .g-wall {
+            position: absolute;
+            left: 20%; 
+            top: 30vh;
+            height: 40vh;
+            width: 15vh;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .5);
+        }
+
+        .g-wall:nth-child(2) {
+            left: 40%; 
+            border-radius: 50%;
+        }
+
+        .g-wall:nth-child(3) {
+            left: 60%; 
+            border-radius: 50%;
+        }
+
+        .g-wall:nth-child(4) {
+            left: 80%; 
+            border-radius: 50%;
+        }
+
+        @keyframes move {
+            
+            20% {
+                transform: translate(20vw, 0);
+                background: #ddd;
+            }
+            
+            40% {
+                transform: translate(40vw, 0);
+                background: #b0ffb4;
+            }
+            
+            60% {
+                transform: translate(60vw, 0);
+                background: #72fc78;
+            }
+            
+            80% {
+                transform: translate(80vw, 0);
+                background: #11ffcb;
+            }
+            
+            100% {
+                transform: translate(100vw, 0);
+                background: #00ff0a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <div class="g-wall"></div>
+    <div class="g-wall"></div>
+    <div class="g-wall"></div>
+    <div class="g-wall"></div>
+</body>
+</html>
