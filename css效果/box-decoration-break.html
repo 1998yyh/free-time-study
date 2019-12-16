@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box-decoration-break</title>
+    <style>
+      span {
+        background-image: linear-gradient(90deg, blue 10%, red 20%, green 30%, purple 40%, yellow 60%, pink 90%);
+      }
+
+      span:last-child {
+        background-image: linear-gradient(90deg, blue 10%, red 20%, green 30%, purple 40%, yellow 60%, pink 90%);
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+      指定元素在跨行跨列跨页的情况渲染的情况
+     -->
+    <span>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex deserunt corrupti numquam odio odit quae magnam,
+      aspernatur error! Inventore quisquam consequuntur repellendus doloribus quidem maxime recusandae eius fugit unde
+      culpa?
+    </span>
+    <br>
+    <span>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex deserunt corrupti numquam odio odit quae magnam,
+      aspernatur error! Inventore quisquam consequuntur repellendus doloribus quidem maxime recusandae eius fugit unde
+      culpa?
+    </span>
+  </body>
+
+</html>
